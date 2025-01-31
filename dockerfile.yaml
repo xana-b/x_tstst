@@ -1,0 +1,11 @@
+FROM nodered/node-red:latest
+
+VOLUME ["/data"]
+
+WORKDIR /data
+
+RUN npm install node-red-dashboard node-red-contrib-modbus
+
+EXPOSE 1880
+
+CMD ["npm", "start", "--", "--userDir", "/data"]
