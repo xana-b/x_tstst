@@ -1,0 +1,905 @@
+[
+    {
+        "id": "2a2dfc35d4d96452",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1ffba04884ce051c",
+        "type": "modbus-client",
+        "name": "AMA3",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyAMA3",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "f40b21d2a5d3d167",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2181f17ffb8e2595",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8aeddf73cac4d6d0",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "f40b21d2a5d3d167",
+        "order": 1,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bf1adecb41b2de5b",
+        "type": "modbus-write",
+        "z": "2a2dfc35d4d96452",
+        "name": "Hzg",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "1ffba04884ce051c",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1650,
+        "y": 620,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "11e9e8e64958067e",
+        "type": "modbus-read",
+        "z": "2a2dfc35d4d96452",
+        "name": "Temp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "50",
+        "quantity": "4",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "1ffba04884ce051c",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 350,
+        "y": 740,
+        "wires": [
+            [
+                "6435ba13d5109829"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4850c58d364d8a9f",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "59409761b39918d7",
+        "type": "modbus-write",
+        "z": "2a2dfc35d4d96452",
+        "name": "Khlg",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "1ffba04884ce051c",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1670,
+        "y": 740,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6435ba13d5109829",
+        "type": "function",
+        "z": "2a2dfc35d4d96452",
+        "name": "Temp conversion",
+        "func": "// Node-RED function node user code\nif (!Array.isArray(msg.payload) || msg.payload.length !== 4) {\n    node.error(\"Input must be an array of 4 numbers.\", msg);\n    return [null, null, null, null, { payload: 1 }]; // Send error as last output\n}\n\nlet values = msg.payload.map(num => {\n    // Ensure the number is within uint16 range (0 - 65535)\n    if (num < 0 || num > 0xFFFF) {\n        return 0; // Default invalid values to 0\n    }\n    \n    // Convert to int16 (handling two's complement for negative values)\n    let int16Value = num > 0x7FFF ? num - 0x10000 : num;\n    \n    // Multiply by 0.1\n    return int16Value * 0.1;\n});\n\n// Create separate messages for each output\nlet msg1 = { payload: values[0] };\nlet msg2 = { payload: values[1] };\nlet msg3 = { payload: values[2] };\nlet msg4 = { payload: values[3] };\nlet msg5 = { payload: 0 }; // Default error to 0 (no error)\n\nif (values.includes(0)) {\n    msg5.payload = 1; // Set error flag if any value was invalid\n}\n\n// Send 5 separate messages for each output\nreturn [msg1, msg2, msg3, msg4, msg5];\n",
+        "outputs": 5,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 780,
+        "wires": [
+            [
+                "4850c58d364d8a9f"
+            ],
+            [],
+            [
+                "8b5435c8724a0214",
+                "a74e02b40ce0cdc5",
+                "3902621a004e77c3",
+                "fda56f532e924c4c"
+            ],
+            [
+                "3486e640b8a5dec5"
+            ],
+            []
+        ],
+        "inputLabels": [
+            "in"
+        ],
+        "outputLabels": [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "Error"
+        ]
+    },
+    {
+        "id": "3a4c0d52f18e63a2",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "8b5435c8724a0214",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "3486e640b8a5dec5",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "a1737895e935818a",
+        "type": "ui_switch",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "label": "Ein Aus",
+        "tooltip": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "on_off",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 640,
+        "y": 480,
+        "wires": [
+            [
+                "79a08c257b7cda2d"
+            ]
+        ]
+    },
+    {
+        "id": "fda56f532e924c4c",
+        "type": "ui_chart",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 6,
+        "width": "12",
+        "height": "7",
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-20",
+        "ymax": "80",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1790,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72de62b9e85f1e18",
+        "type": "ui_numeric",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "label": "Solltemperatur",
+        "tooltip": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "setpoint",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "e1e402b7148e9d56",
+                "fda56f532e924c4c"
+            ]
+        ]
+    },
+    {
+        "id": "cdfbb03c7957a2f0",
+        "type": "ui_numeric",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "label": "Hysterese +",
+        "tooltip": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "hysteresis_plus",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "1",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 670,
+        "y": 620,
+        "wires": [
+            [
+                "78d56fa0845b9663"
+            ]
+        ]
+    },
+    {
+        "id": "4f117b1be1725cb5",
+        "type": "ui_numeric",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "label": "Hysterese -",
+        "tooltip": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "hysteresis_minus",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "1",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 670,
+        "y": 680,
+        "wires": [
+            [
+                "353c128ee4e17ffc"
+            ]
+        ]
+    },
+    {
+        "id": "24f59d7644794347",
+        "type": "function",
+        "z": "2a2dfc35d4d96452",
+        "name": "Temp controller",
+        "func": "// Retrieve stored values (undefined if not set yet)\nlet setpoint = context.get(\"setpoint\");\nlet hysteresis_plus = context.get(\"hysteresis_plus\");\nlet hysteresis_minus = context.get(\"hysteresis_minus\");\nlet temperature = context.get(\"temperature\");\nlet on_off = context.get(\"on_off\");\n\n// Process incoming message based on its topic\nswitch (msg.topic) {\n    case \"setpoint\":\n        setpoint = msg.payload;\n        context.set(\"setpoint\", setpoint);\n        break;\n    case \"hysteresis_plus\":\n        hysteresis_plus = msg.payload;\n        context.set(\"hysteresis_plus\", hysteresis_plus);\n        break;\n    case \"hysteresis_minus\":\n        hysteresis_minus = msg.payload;\n        context.set(\"hysteresis_minus\", hysteresis_minus);\n        break;\n    case \"temperature\":\n        temperature = msg.payload;\n        context.set(\"temperature\", temperature);\n        break;\n    case \"on_off\":\n        on_off = msg.payload;\n        context.set(\"on_off\", on_off);\n        break;\n}\n\n// Check which values are still missing\nlet missingInputs = [];\n\nif (setpoint === undefined) missingInputs.push(\"S:NOK\");\nelse missingInputs.push(\"S:OK\");\n\nif (hysteresis_plus === undefined) missingInputs.push(\"H+:NOK\");\nelse missingInputs.push(\"H+:OK\");\n\nif (hysteresis_minus === undefined) missingInputs.push(\"H-:NOK\");\nelse missingInputs.push(\"H-:OK\");\n\nif (temperature === undefined) missingInputs.push(\"T:NOK\");\nelse missingInputs.push(\"T:OK\");\n\nif (on_off === undefined) missingInputs.push(\"ON:NOK\");\nelse missingInputs.push(\"ON:OK\");\n\n// If any value is missing, update status and return\nif (missingInputs.includes(\"S:NOK\") || missingInputs.includes(\"H+:NOK\") ||\n    missingInputs.includes(\"H-:NOK\") || missingInputs.includes(\"T:NOK\") || missingInputs.includes(\"ON:NOK\")) {\n    \n    node.status({\n        fill: \"yellow\",\n        shape: \"dot\",\n        text: `Waiting: ${missingInputs.join(\" \")}`\n    });\n    \n    return null; // Do nothing until all values are received\n}\n\n// Retrieve previous heating and cooling state\nlet heating = context.get(\"heating\") || false;\nlet cooling = context.get(\"cooling\") || false;\nif (!on_off) {\n    // System is off, turn off heating and cooling\n    heating = false;\n    cooling = false;\n\n} else {\n\n    // Heating logic\n    if (temperature < setpoint - hysteresis_minus) {\n        heating = true; // Turn heating on\n    } else if (temperature > setpoint) {\n        heating = false; // Turn heating off\n    }\n\n    // Cooling logic\n    if (temperature > setpoint + hysteresis_plus) {\n        cooling = true; // Turn cooling on\n    } else if (temperature < setpoint) {\n        cooling = false; // Turn cooling off\n    }\n}\n\n// Store the updated states\ncontext.set(\"heating\", heating);\ncontext.set(\"cooling\", cooling);\n\n// Set node status for debugging\nnode.status({\n    fill: heating ? \"red\" : cooling ? \"blue\" : \"green\",\n    shape: \"dot\",\n    text: `${on_off?\"on\":\"off\"} T:${temperature}°C S:${setpoint}°C H+:${hysteresis_plus} H-:${hysteresis_minus} ${heating ? \"🔥\" : \"\"}${cooling ? \"❄️\" : \"\"}`\n});\n\n// Output updated states\nreturn [\n    {payload:  heating},\n    {payload:  cooling}\n    ];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 560,
+        "wires": [
+            [
+                "7b8a6cabe7d17fb4",
+                "1ad51c0efad314af",
+                "bf1adecb41b2de5b"
+            ],
+            [
+                "47c1c2bc62192aca",
+                "9bbfb60ffd401592",
+                "59409761b39918d7"
+            ]
+        ],
+        "inputLabels": [
+            "in"
+        ],
+        "outputLabels": [
+            "Hzg",
+            "Kühlung"
+        ]
+    },
+    {
+        "id": "a74e02b40ce0cdc5",
+        "type": "change",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 980,
+        "wires": [
+            [
+                "24f59d7644794347",
+                "3a4c0d52f18e63a2"
+            ]
+        ]
+    },
+    {
+        "id": "9a024343f752aa5a",
+        "type": "inject",
+        "z": "2a2dfc35d4d96452",
+        "name": "T_nom",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "20",
+        "payloadType": "num",
+        "x": 320,
+        "y": 560,
+        "wires": [
+            [
+                "72de62b9e85f1e18",
+                "e1e402b7148e9d56"
+            ]
+        ]
+    },
+    {
+        "id": "611c6e6dbfce5c59",
+        "type": "inject",
+        "z": "2a2dfc35d4d96452",
+        "name": "T_nom",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 320,
+        "y": 600,
+        "wires": [
+            [
+                "cdfbb03c7957a2f0",
+                "78d56fa0845b9663"
+            ]
+        ]
+    },
+    {
+        "id": "7da18f0f13fb2382",
+        "type": "inject",
+        "z": "2a2dfc35d4d96452",
+        "name": "T_nom",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 320,
+        "y": 640,
+        "wires": [
+            [
+                "4f117b1be1725cb5",
+                "353c128ee4e17ffc"
+            ]
+        ]
+    },
+    {
+        "id": "308c6888df3fa6de",
+        "type": "inject",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "a1737895e935818a"
+            ]
+        ]
+    },
+    {
+        "id": "78d56fa0845b9663",
+        "type": "change",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hysteresis_plus",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 640,
+        "wires": [
+            [
+                "24f59d7644794347"
+            ]
+        ]
+    },
+    {
+        "id": "e1e402b7148e9d56",
+        "type": "change",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "setpoint",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 600,
+        "wires": [
+            [
+                "24f59d7644794347"
+            ]
+        ]
+    },
+    {
+        "id": "353c128ee4e17ffc",
+        "type": "change",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "hysteresis_minus",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 680,
+        "wires": [
+            [
+                "24f59d7644794347"
+            ]
+        ]
+    },
+    {
+        "id": "3902621a004e77c3",
+        "type": "ui_gauge",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "group": "8aeddf73cac4d6d0",
+        "order": 7,
+        "width": "5",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Temp",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1790,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7b8a6cabe7d17fb4",
+        "type": "ui_led",
+        "z": "2a2dfc35d4d96452",
+        "order": 5,
+        "group": "8aeddf73cac4d6d0",
+        "width": "2",
+        "height": "2",
+        "label": "Hzg",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1650,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "47c1c2bc62192aca",
+        "type": "ui_led",
+        "z": "2a2dfc35d4d96452",
+        "order": 4,
+        "group": "8aeddf73cac4d6d0",
+        "width": "2",
+        "height": "2",
+        "label": "Kühlung",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#0000ff",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1670,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "79a08c257b7cda2d",
+        "type": "change",
+        "z": "2a2dfc35d4d96452",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "on_off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 480,
+        "wires": [
+            [
+                "24f59d7644794347"
+            ]
+        ]
+    },
+    {
+        "id": "1ad51c0efad314af",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1810,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "9bbfb60ffd401592",
+        "type": "debug",
+        "z": "2a2dfc35d4d96452",
+        "name": "T2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1770,
+        "y": 820,
+        "wires": []
+    }
+]
