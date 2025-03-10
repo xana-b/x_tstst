@@ -783,7 +783,7 @@
         "gtype": "gage",
         "title": "Temp",
         "label": "units",
-        "format": "{{value| number:1}}",
+        "format": "{{value| number:2}}",
         "min": "-20",
         "max": "80",
         "colors": [

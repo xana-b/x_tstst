@@ -6,7 +6,7 @@ USER_DIR="/app"
 
 rm -rf ~/.cache/chromium
 
-node-red -f x_tstst/flow/controller.json &
+/usr/bin/node-red -f x_tstst/flow/controller.json &
 sleep 10
 
     chromium --kiosk \
